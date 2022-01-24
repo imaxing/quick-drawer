@@ -70,7 +70,7 @@ module.exports =
             filename: 'style/[name].css'
           },
           loaderOptions: {
-            less: { javascriptEnabled: true }
+            // less: { javascriptEnabled: true }
           }
         }
       }
@@ -81,7 +81,7 @@ module.exports =
             filename: 'style.css'
           },
           loaderOptions: {
-            less: { javascriptEnabled: true }
+            // less: { javascriptEnabled: true }
           }
         }
       }

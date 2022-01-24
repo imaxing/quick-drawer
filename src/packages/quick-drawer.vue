@@ -151,27 +151,28 @@ export default {
 }
 </script>
 
-<style>
-.quick-drawer .ant-drawer-wrapper-body {
-  height: 100vh;
-  overflow: hidden;
-}
-
-.quick-drawer.show-footer .ant-drawer-body {
-  height: calc(100vh - 55px);
-  overflow-y: auto;
-}
-.quick-drawer .ant-drawer-header {
-  padding: 0;
-}
-.quick-drawer .quick-drawer__head {
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-}
-.quick-drawer .quick-drawer__head .ant-btn:not(:last-of-type) {
-  margin-right: 4px;
+<style lang="less">
+div.quick-drawer {
+  .ant-drawer-wrapper-body {
+    height: 100vh;
+    overflow: hidden;
+  }
+  &.show-footer .ant-drawer-body {
+    height: calc(100vh - 55px);
+    overflow-y: auto;
+  }
+  .ant-drawer-header {
+    padding: 0;
+  }
+  .quick-drawer__head {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+  .quick-drawer__head .ant-btn:not(:last-of-type) {
+    margin-right: 4px;
+  }
 }
 </style>
