@@ -4,7 +4,7 @@ export default {
   data: () => ({
     buttons: [],
     title: null,
-    width: 800,
+    width: '50%',
     closable: true,
     keyboard: true,
     maskClosable: true,
@@ -151,28 +151,26 @@ export default {
 }
 </script>
 
-<style lang="less">
-div.quick-drawer {
-  .ant-drawer-wrapper-body {
-    height: 100vh;
-    overflow: hidden;
-  }
-  &.show-footer .ant-drawer-body {
-    height: calc(100vh - 55px);
-    overflow-y: auto;
-  }
-  .ant-drawer-header {
-    padding: 0;
-  }
-  .quick-drawer__head {
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-  }
-  .quick-drawer__head .ant-btn:not(:last-of-type) {
-    margin-right: 4px;
-  }
+<style lang="less" scoped>
+/deep/ .ant-drawer-wrapper-body {
+  height: 100vh;
+  overflow: hidden;
+}
+.show-footer /deep/ .ant-drawer-body {
+  height: calc(100vh - 55px);
+  overflow-y: auto;
+}
+/deep/ .ant-drawer-header {
+  padding: 0;
+}
+.quick-drawer__head {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+.quick-drawer__head .ant-btn:not(:last-of-type) {
+  margin-right: 4px;
 }
 </style>
