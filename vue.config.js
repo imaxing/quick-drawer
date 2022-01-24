@@ -1,6 +1,4 @@
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
-const resolve = dir => path.resolve(__dirname, dir)
 
 const BUILD_CONFIG = {
   productionSourceMap: false,
@@ -8,22 +6,16 @@ const BUILD_CONFIG = {
     config.externals({ moment: 'moment' })
     config.module.rule('js').rule('vue').include.add('/packages').end()
   },
+  css: { extract: false },
   configureWebpack: {
     output: {
-      filename: 'quick-drawer/index.js',
+      filename: 'index.js',
       libraryTarget: 'commonjs2',
       path: path.join(__dirname, 'dist'),
       publicPath: '/'
     },
-    performance: {
-      hints: false
-    },
-    optimization: {
-      minimize: true,
-      minimizer: []
-    },
     plugins: [
-      new TerserPlugin({
+      new (require('terser-webpack-plugin'))({
         exclude: /\/node_modules/,
         extractComments: false,
         terserOptions: {
@@ -64,24 +56,6 @@ module.exports =
           hot: true,
           open: true,
           disableHostCheck: true
-        },
-        css: {
-          extract: {
-            filename: 'style/[name].css'
-          },
-          loaderOptions: {
-            // less: { javascriptEnabled: true }
-          }
         }
       }
-    : {
-        ...BUILD_CONFIG,
-        css: {
-          extract: {
-            filename: 'style.css'
-          },
-          loaderOptions: {
-            // less: { javascriptEnabled: true }
-          }
-        }
-      }
+    : BUILD_CONFIG
