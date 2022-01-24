@@ -1,6 +1,6 @@
 {
   "name": "@iamgx/quick-drawer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "quick-drawer",
   "private": false,
   "main": "./dist/quick-drawer.umd.min.js",
